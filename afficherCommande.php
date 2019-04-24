@@ -1,3 +1,12 @@
+
+<?PHP
+include "../core1/CommandeC.php";
+$commande1C=new CommandeC();
+$listecommandes=$commande1C->afficherCommandes();
+
+//var_dump($listeEmployes->fetchAll());
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -15,11 +24,11 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>ATT</title>
+	<title>ATT Shop</title>
 
 	<!--
-            CSS
-            ============================================= -->
+		CSS
+		============================================= -->
 	<link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/themify-icons.css">
@@ -49,15 +58,15 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
 							<li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-							<li class="nav-item submenu dropdown">
+							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Boutique</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-									<li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-									<li class="nav-item"><a class="nav-link" href="cart.html">Panier </a></li>
-									<li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
+									<li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail des produits</a></li>
+									<li class="nav-item"><a class="nav-link" href="checkout.html">Vérification des produits</a></li>
+									<li class="nav-item"><a class="nav-link" href="cart.html">Panier</a></li>
+									<li class="nav-item active"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -65,7 +74,7 @@
 								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.html">Detail du blog</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -77,7 +86,7 @@
 									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 								</ul>
 							</li>
-							<li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
@@ -106,10 +115,10 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-					<h1>Contactez-nous</h1>
+					<h1>Confirmation</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.html">Accueil<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Contact</a>
+						<a href="category.html">Confirmation</a>
 					</nav>
 				</div>
 			</div>
@@ -117,59 +126,41 @@
 	</section>
 	<!-- End Banner Area -->
 
-	<!--================Contact Area =================-->
-	<section class="contact_area section_gap_bottom">
-		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="37.267439" data-lon="9.866120" data-zoom="13" data-info=" 6 Rue de Belgique, 7000, Bizerte, Tunisie"
-			 data-mlat="37.267439" data-mlon="9.866120">
-			</div>
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="contact_info">
-						<div class="info_item">
-							<i class="lnr lnr-home"></i>
-							<h6>Bizerte, Tunisie</h6>
-							<p> 6 Rue Belgique, 7000</p>
-						</div>
-						<div class="info_item">
-							<i class="lnr lnr-phone-handset"></i>
-							<h6><a href="#">+216 72434643/+216 98440541 </a></h6>
-							<p>Ouvert du Lundi au Vendredi de 8h à 17h30 et le samedi de 8h à 14h</p>
-						</div>
-						<div class="info_item">
-							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">adminstration.att@planet.tn/magazin.att@planet.tn</a></h6>
-							<p>Contactez-nous !</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Inserez votre nom" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre addresse mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="subject" name="subject" placeholder="Objet" onfocus="this.placeholder = ''" onblur="this.placeholder = '">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Entrez votre Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
-							</div>
-						</div>
-						<div class="col-md-12 text-right">
-							<button type="submit" value="submit" class="primary-btn">Envoyez</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================Contact Area =================-->
+	<!--================Order Details Area =================-->
+	<table border="1">
+<tr>
+<td>numcom</td>
+<td>date</td>
+<td>total</td>
+<td>typepaie</td>
+<td>supprimer</td>
+<td>modifier</td>
+</tr>
+
+<?PHP
+foreach($listecommandes as $row){
+	?>
+	<tr>
+	<td><?PHP echo $row['numcom']; ?></td>
+	<td><?PHP echo $row['date']; ?></td>
+	<td><?PHP echo $row['total']; ?></td>
+	<td><?PHP echo $row['typepaie']; ?></td>
+	<td><form method="POST" action="supprimerCommande.php">
+	<input type="submit" name="supprimer" value="supprimer">
+	<input type="hidden" value="<?PHP echo $row['numcom']; ?>" name="numcom">
+	</form>
+	</td>
+	<td><a href="modifierCommande.php?numcom=<?PHP echo $row['numcom']; ?>">
+	Modifier</a></td>
+	</tr>
+	<?PHP
+}
+?>
+</table>
+
+
+
+	<!--================End Order Details Area =================-->
 
 	<!-- start footer Area -->
 	<footer class="footer-area section_gap">
@@ -177,18 +168,16 @@
 			<div class="row">
 				<div class="col-lg-3  col-md-6 col-sm-6">
 					<div class="single-footer-widget">
-						<h6>À propos 
-
-</h6>
+						<h6>À propos</h6>
 						<p>
-								Notre société est la société leader dans son secteur avec ses 30 ans d’expérience.
+							Notre société est la société leader dans son secteur avec ses 30 ans d’expérience.
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-4  col-md-6 col-sm-6">
 					<div class="single-footer-widget">
 						<h6>Newsletter</h6>
-						<p>Stay updated! </p>
+						<p>Stay updated</p>
 						<div class="" id="mc_embed_signup">
 
 							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -196,7 +185,7 @@
 
 								<div class="d-flex flex-row">
 
-									<input class="form-control" name="EMAIL" placeholder="Entrez Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
 									 required="" type="email">
 
 
@@ -231,56 +220,24 @@
 				</div>
 				<div class="col-lg-2 col-md-6 col-sm-6">
 					<div class="single-footer-widget">
-						<h6>Suivez-nous</h6>
+						<h6>Follow Us</h6>
 						<p>Let us be social</p>
 						<div class="footer-social d-flex align-items-center">
 							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-Linkedin"></i></a>
-							
+							<a href="#"><i class="fa fa-linkedin"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
 				<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
 </p>
 			</div>
 		</div>
 	</footer>
 	<!-- End footer Area -->
 
-	<!--================Contact Success and Error message Area =================-->
-	<div id="success" class="modal modal-message fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i class="fa fa-close"></i>
-					</button>
-					<h2>Merci</h2>
-					<p>Votre message a ete envoye avec succes . </p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<!-- Modals error -->
-
-	<div id="error" class="modal modal-message fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i class="fa fa-close"></i>
-					</button>
-					<h2>Erreur !</h2>
-					<p> Something went wrong </p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--================End Contact Success and Error message Area =================-->
 
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>

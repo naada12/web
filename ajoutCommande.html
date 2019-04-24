@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="css/nouislider.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <script  src="js/js/verif.js"></script>
 </head>
 
 <body>
@@ -160,31 +162,31 @@ Cliquez ici pour vous connecter</a></h2>
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Détails de la facturation</h3>
-                        <form class="row contact_form"  method="POST" action="ajoutCommande.php"> 
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="nomcom">
-                                <span class="placeholder" data-placeholder="nomcommande"></span>
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="date">
-                                <span class="placeholder" data-placeholder="jj/mm/aaaa"></span>
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="number" class="form-control" id="number" name="total">
-                                <span class="placeholder" data-placeholder="Total"></span>
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="typepaie">
-                                <span class="placeholder" data-placeholder="typepaiement"></span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <td><form method="POST" action="supprimerEmploye.php">
-                              	<input type="submit" name="ajouter" value="ajouter">
-	                            <input type="hidden" value="<?PHP echo $row['nomcom']; ?>" name="nomcom">
-                            	</form>
-	                              </td>
-                            </div>
-                        </form>
+                        <form method="POST" action="ajoutCommande.php" id="form">
+<table>
+<caption>Ajouter Commande</caption>
+<tr>
+<td>numcommande</td>
+<td><input type="number" placeholder="[ num commande ]" name="numcom" required="required"></td>
+</tr>
+<tr>
+<td>date</td>
+<td><input type="text" placeholder="[ jj/mm/aaaa ]" name="date" required="required"></td>
+</tr>
+<tr>
+<td>total</td>
+<td><input type="number"placeholder="[ total]" name="total" required="required"></td>
+</tr>
+<tr>
+<td>typepaie</td>
+<td><input type="text" name="typepaie" required="required"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" name="ajouter" value="ajouter"></td>
+</tr>
+</table>
+</form>
                     </div>
                     <div class="col-lg-4">
                         <div class="order_box">

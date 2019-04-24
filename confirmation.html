@@ -1,3 +1,12 @@
+
+<?PHP
+include "../core1/CommandeC.php";
+$commande1C=new CommandeC();
+$listecommandes=$commande1C->afficherCommandes();
+
+//var_dump($listeEmployes->fetchAll());
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -38,7 +47,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -48,13 +57,13 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
 							<li class="nav-item submenu dropdown active">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Boutique</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="boutique/category.php">Categories</a></li>
-									<li class="nav-item"><a class="nav-link" href="boutique/single-product.php">Detail des produits</a></li>
+									<li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-product.html">Detail des produits</a></li>
 									<li class="nav-item"><a class="nav-link" href="checkout.html">Vérification des produits</a></li>
 									<li class="nav-item"><a class="nav-link" href="cart.html">Panier</a></li>
 									<li class="nav-item active"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
@@ -108,8 +117,8 @@
 				<div class="col-first">
 					<h1>Confirmation</h1>
 					<nav class="d-flex align-items-center">
-						<a href="index.php">Accueil<span class="lnr lnr-arrow-right"></span></a>
-						<a href="boutique/category.php">Confirmation</a>
+						<a href="index.html">Accueil<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.html">Confirmation</a>
 					</nav>
 				</div>
 			</div>
@@ -119,124 +128,30 @@
 
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
-		<div class="container">
-			<h3 class="title_confirmation">
-On vous remercie. Votre commande a été reçue.</h3>
-			<div class="row order_d_inner">
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Informations de commande</h4>
-						<ul class="list">
-							<li><a href="#"><span>
-Numéro de commande</span> : 60235</a></li>
-							<li><a href="#"><span>Date</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Total</span> : USD 2210</a></li>
-							<li><a href="#"><span>Type de paiement</span> : Check payments</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Adresse de facturation</h4>
-						<ul class="list">
-							<li><a href="#"><span>Rue</span> : 56/8</a></li>
-							<li><a href="#"><span>Ville</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Pays</span> : United States</a></li>
-							<li><a href="#"><span>Code postal </span> : 36952</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Adresse de livraison</h4>
-						<ul class="list">
-							<li><a href="#"><span>Rue</span> : 56/8</a></li>
-							<li><a href="#"><span>Ville</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Pays</span> : United States</a></li>
-							<li><a href="#"><span>Code postal </span> : 36952</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			
+				
 			<div class="order_details_table">
 				<h2>Détails de la commande</h2>
 				<div class="table-responsive">
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Produit(s)</th>
-								<th scope="col">Quantité</th>
+								<th scope="col">Numcommande</th>
+								<th scope="col">Date</th>
 								<th scope="col">Total</th>
+								<th scope="col">Typedepaiement</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Total</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>$2160.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Livraison</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>Forfait: $50.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h4>Total</h4>
-								</td>
-								<td>
-									<h5></h5>
-								</td>
-								<td>
-									<p>$2210.00</p>
-								</td>
-							</tr>
-						</tbody>
+						<td><form method="POST" action="modifierCommande.php">
+                              	<input type="submit" name="modifier" value="modifier">
+	                            <input type="hidden" value="<?PHP echo $row['nomcom']; ?>" name="nomcom">
+                            	</form>
+	                              </td>
+	                              <td><form method="POST" action="supprimerCommande.php">
+                              	<input type="submit" name="supprimer" value="supprimer">
+	                            <input type="hidden" value="<?PHP echo $row['nomcom']; ?>" name="nomcom">
+                            	</form>
+	                              </td>
 					</table>
 				</div>
 			</div>
